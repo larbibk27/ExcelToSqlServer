@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h1>Excel to SqlServer</h1>
+    <hr />
+    @if (@ViewData["Message"] == null)
+    {
+        <h3 class="text-info">Upload Excel File</h3>
+        <hr />
+        <form enctype="multipart/form-data" method="post">
+            <input type="file" name="excelFile" id="excelFile">
+            <input asp-action="Post" class="btn btn-primary" type="submit" value="Upload" />
+        </form>
+    }
+    else
+    {
+        <h3 class="text-success">@ViewData["Message"]</h3>
+        <hr />
+        <form>
+            <input asp-action="SaveExcelFileToDatabase" class="btn btn-secondary" type="submit" value="Save To Database" />
+        </form>
+    }
+</div>

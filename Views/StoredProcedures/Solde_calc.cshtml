@@ -1,0 +1,36 @@
+@model IEnumerable<ExcelToSqlServer.Models.Solde_calcModel>
+
+@{
+    ViewData["Title"] = "Solde_calc Call Result";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Solde_calc Call Result</h1>
+    <hr />
+</div>
+
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Client)</th>  
+                <th>@Html.DisplayNameFor(m => m.Echu)</th>  
+                <th>@Html.DisplayNameFor(m => m.Echoir)</th>  
+                <th>@Html.DisplayNameFor(m => m.Lien)</th>  
+                <th>@Html.DisplayNameFor(m => m.Lien2)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var scr in Model)  
+            {  
+                <tr>
+                    <td>@scr.Client</td>
+                    <td>@scr.Echu</td>
+                    <td>@scr.Echoir</td>
+                    <td>@scr.Lien</td>
+                    <td>@scr.Lien2</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+@model IEnumerable<ExcelToSqlServer.Models.GL>  
+@{  
+    ViewData["Title"] = "GL Table";
+}  
+
+<h3 class="text-success">@ViewData["Message"]</h3>
+
+<h2>GL Table</h2>
+<div style="overflow-x: scroll;">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.AnneeMois)</th>  
+                <th>@Html.DisplayNameFor(m => m.Compte)</th>  
+                <th>@Html.DisplayNameFor(m => m.Texte)</th>  
+                <th>@Html.DisplayNameFor(m => m.NumPiece)</th>  
+                <th>@Html.DisplayNameFor(m => m.DatePiece)</th>  
+                <th>@Html.DisplayNameFor(m => m.Affectation)</th>  
+                <th>@Html.DisplayNameFor(m => m.Reference)</th>
+                <th>@Html.DisplayNameFor(m => m.TypeDePiece)</th>
+                <th>@Html.DisplayNameFor(m => m.MontantEnDeviseInterne)</th>
+                <th>@Html.DisplayNameFor(m => m.PieceRapprochement)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gl in Model)  
+            {  
+                <tr>
+                    <td>@gl.AnneeMois</td>
+                    <td>@gl.Compte</td>
+                    <td>@gl.Texte</td>
+                    <td>@gl.NumPiece</td>
+                    <td>@gl.DatePiece</td>
+                    <td>@gl.Affectation</td>
+                    <td>@gl.Reference</td>
+                    <td>@gl.TypeDePiece</td>
+                    <td>@gl.MontantEnDeviseInterne</td>
+                    <td>@gl.PieceRapprochement</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
